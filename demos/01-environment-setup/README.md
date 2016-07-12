@@ -1,0 +1,1 @@
+This demo is just a high level walkthrough of the [Seed Project](https://github.com/DEV6hub/Angular2-Webpack-Seed). Please do not commit any code into this folder as the seed repo should be the only source of truth.
