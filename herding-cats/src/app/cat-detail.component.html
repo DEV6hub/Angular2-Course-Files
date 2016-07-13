@@ -1,3 +1,6 @@
 <h3>{{cat.name}}</h3>
 <p>Type: {{cat.type}}</p>
 <p>Description: {{cat.description}}</p>
+
+<input type="text" [(ngModel)]="cat.name">
+<button (click)="selectFavourite()">Select Favourite</button>

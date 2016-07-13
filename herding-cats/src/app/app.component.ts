@@ -9,11 +9,19 @@ import { CatDetailComponent } from './cat-detail.component';
   directives: [CatDetailComponent]
 })
 export class AppComponent {
-  cat1 = new Cat('Matilda', 'Calico', 'Loves window sitting and snuggles');
-  cat2 = new Cat('Boots', 'Tabby', 'Likes to perch in high locations');
-  selectedCat = this.cat1;
+  cats = [
+    new Cat('Matilda', 'Calico', 'Loves window sitting and snuggles'),
+    new Cat('Boots', 'Tabby', 'Likes to perch in high locations'),
+    new Cat('Fuzzy', 'Persian', 'Thinks she is the queen of all she sees')
+  ];
+  selectedCat: Cat;
+  favouriteCat: Cat;
 
   selectCat(cat: Cat) {
     this.selectedCat = cat;
+  }
+
+  selectFavourite(cat: Cat) {
+    this.favouriteCat = cat;
   }
 }
