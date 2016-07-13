@@ -1,0 +1,8 @@
+<h1>Herding Cats</h1>
+
+<ul>
+  <li (click)="selectCat(cat1)">{{cat1.name}}</li>
+  <li (click)="selectCat(cat2)">{{cat2.name}}</li>
+</ul>
+
+<cat-detail [cat]="selectedCat"></cat-detail>
