@@ -1,21 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Cat } from './cat.model';
 import { CatDetailComponent } from './cat-detail.component';
+import { CatService } from './cat.service';
 
 @Component({
   selector: 'herding-cats',
   templateUrl: './app.component.html',
-  directives: [CatDetailComponent]
+  directives: [CatDetailComponent],
+  providers: [CatService]
 })
-export class AppComponent {
-  cats = [
-    new Cat('Matilda', 'Calico', 'Loves window sitting and snuggles', new Date(2016, 0, 25)),
-    new Cat('Boots', 'Tabby', 'Likes to perch in high locations', new Date(2013, 8, 7)),
-    new Cat('Fuzzy', 'Persian', 'Thinks she is the queen of all she sees', new Date(2006, 4, 20))
-  ];
+export class AppComponent implements OnInit {
+  cats: Cat[];
   selectedCat: Cat;
   favouriteCat: Cat;
+
+  constructor(private catService: CatService) {}
+
+  ngOnInit() {
+    this.cats = this.catService.getCatList();
+    this.favouriteCat = this.catService.favouriteCat;
+  }
 
   selectCat(cat: Cat) {
     this.selectedCat = cat;
@@ -23,5 +28,6 @@ export class AppComponent {
 
   selectFavourite(cat: Cat) {
     this.favouriteCat = cat;
+    this.catService.favouriteCat = cat;
   }
 }
