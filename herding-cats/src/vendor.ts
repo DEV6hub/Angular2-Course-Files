@@ -1,5 +1,7 @@
 // Vendors
 
+import 'moment';
+
 // Angular 2
 import '@angular/core';
 import '@angular/common';
