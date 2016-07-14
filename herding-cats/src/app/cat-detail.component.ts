@@ -11,8 +11,13 @@ import { CatYearsPipe } from './cat-years.pipe';
 export class CatDetailComponent {
   @Input() cat: Cat;
   @Output() isFavourite = new EventEmitter<Cat>();
+  @Output() edit = new EventEmitter<Cat>();
 
   selectFavourite() {
     this.isFavourite.emit(this.cat);
+  }
+
+  editCat() {
+    this.edit.emit(this.cat);
   }
 }

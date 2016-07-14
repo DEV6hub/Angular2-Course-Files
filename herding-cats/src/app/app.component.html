@@ -6,4 +6,10 @@
   <li *ngFor="let cat of cats" (click)="selectCat(cat)">{{cat.name}}</li>
 </ul>
 
-<cat-detail [cat]="selectedCat" (isFavourite)="selectFavourite($event)" *ngIf="selectedCat"></cat-detail>
+<div>
+  <button (click)="addCat()" *ngIf="!showForm">Add A Cat</button>
+</div>
+
+<cat-detail [cat]="selectedCat" (isFavourite)="selectFavourite($event)" (edit)="editCat()" *ngIf="selectedCat && !showForm"></cat-detail>
+
+<cat-form [catId]="selectedCat?.id" (saved)="finishedEditing($event)" *ngIf="showForm"></cat-form>

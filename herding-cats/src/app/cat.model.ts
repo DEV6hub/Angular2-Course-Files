@@ -1,8 +1,14 @@
 export class Cat {
-  constructor(
-    public name: string,
-    public type: string,
-    public description: string,
-    public birthday: Date
-  ) { }
+  id: number;
+  name: string;
+  type: string;
+  description: string;
+  birthday: Date;
+
+  constructor(name?: string, type?: string, description?: string, birthday?: Date) {
+    this.name = name;
+    this.type = type;
+    this.description = type;
+    this.birthday = birthday;
+  }
 }
