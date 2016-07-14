@@ -32,13 +32,18 @@ export class CatFormComponent implements OnInit {
   }
 
   saveCat() {
-    this.cat = this.catService.saveCat(this.cat);
-    this.saved.emit(this.cat);
+    this.catService.saveCat(this.cat)
+      .then((cat) => {
+        this.cat = cat;
+        this.saved.emit(cat);
+      });
   }
 
   removeCat() {
-    this.catService.removeCat(this.cat);
-    this.saved.emit(undefined);
+    this.catService.removeCat(this.cat)
+      .then(() => {
+        this.saved.emit(undefined);
+      });
   }
 
 }
