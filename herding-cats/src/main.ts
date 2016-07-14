@@ -3,7 +3,7 @@ import { provide } from '@angular/core';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { HTTP_PROVIDERS, BaseRequestOptions, RequestOptions, Headers } from '@angular/http';
 
-import { AppComponent } from './app';
+import { AppComponent, APP_ROUTER_PROVIDERS } from './app';
 
 class DefaultHttpRequest extends BaseRequestOptions {
   headers = new Headers({
@@ -15,5 +15,6 @@ bootstrap(AppComponent, [
   disableDeprecatedForms(),
   provideForms(),
   HTTP_PROVIDERS,
-  provide(RequestOptions, { useClass: DefaultHttpRequest })
+  provide(RequestOptions, { useClass: DefaultHttpRequest }),
+  APP_ROUTER_PROVIDERS
 ]);

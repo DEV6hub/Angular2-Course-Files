@@ -1,0 +1,9 @@
+<h3>Favourite Cat: {{favouriteCat?.name}}</h3>
+
+<ul>
+  <li *ngFor="let cat of cats | async" (click)="selectCat(cat)">{{cat.name}}</li>
+</ul>
+
+<div>
+  <button (click)="addCat()" *ngIf="!showForm">Add A Cat</button>
+</div>
