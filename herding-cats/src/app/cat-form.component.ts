@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import * as moment from 'moment';
+import { Subscription } from 'rxjs/Subscription';
 
 import { Cat } from './cat.model';
 import { CatService } from './cat.service';
@@ -8,19 +9,25 @@ import { CatService } from './cat.service';
   selector: 'cat-form',
   templateUrl: './cat-form.component.html'
 })
-export class CatFormComponent implements OnInit {
+export class CatFormComponent implements OnInit, OnDestroy {
   @Input() catId: number;
   @Output() saved = new EventEmitter<Cat>();
   cat: Cat;
+  private catSubscription: Subscription;
 
   constructor(private catService: CatService) { }
 
-  ngOnInit(): void {
-    this.cat = this.catService.getCat(this.catId);
+  ngOnInit() {
+    this.catSubscription = this.catService.getCat(this.catId)
+      .subscribe(cat => this.cat = cat);
 
     if (!this.cat) {
       this.cat = new Cat();
     }
+  }
+
+  ngOnDestroy() {
+    this.catSubscription.unsubscribe();
   }
 
   birthdayForInput(): string {
@@ -41,9 +48,7 @@ export class CatFormComponent implements OnInit {
 
   removeCat() {
     this.catService.removeCat(this.cat)
-      .then(() => {
-        this.saved.emit(undefined);
-      });
+      .then(() => this.saved.emit(undefined));
   }
 
 }

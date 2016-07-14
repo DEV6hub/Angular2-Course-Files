@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 
 import { Cat } from './cat.model';
 import { CatService } from './cat.service';
@@ -11,17 +12,22 @@ import { CatFormComponent } from './cat-form.component';
   directives: [CatDetailComponent, CatFormComponent],
   providers: [CatService]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   cats: Cat[];
   selectedCat: Cat;
   favouriteCat: Cat;
   showForm: boolean;
+  private catsSubscription: Subscription;
 
   constructor(private catService: CatService) {}
 
   ngOnInit() {
     this.getCats();
     this.favouriteCat = this.catService.favouriteCat;
+  }
+
+  ngOnDestroy() {
+    this.catsSubscription.unsubscribe();
   }
 
   selectCat(cat: Cat) {
@@ -49,6 +55,7 @@ export class AppComponent implements OnInit {
   }
 
   private getCats() {
-    this.cats = this.catService.getCatList();
+    this.catsSubscription = this.catService.getCatList()
+      .subscribe(cats => this.cats = cats);
   }
 }

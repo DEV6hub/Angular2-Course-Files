@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { Cat } from './cat.model';
 
@@ -17,12 +18,13 @@ export class CatService {
   private cats = [matilda, boots, fuzzy];
   private idCounter = 4;
 
-  getCatList(): Cat[] {
-    return this.cats;
+  getCatList(): Observable<Cat[]> {
+    return Observable.of(this.cats);
   }
 
-  getCat(id: number): Cat {
-    return this.cats.find(cat => cat.id === id);
+  getCat(id: number): Observable<Cat> {
+    return Observable.from(this.cats)
+      .filter(cat => cat.id === id);
   }
 
   saveCat(unsavedCat: Cat): Promise<Cat> {
