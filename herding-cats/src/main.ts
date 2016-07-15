@@ -5,6 +5,8 @@ import { HTTP_PROVIDERS, BaseRequestOptions, RequestOptions, Headers } from '@an
 
 import { AppComponent, APP_ROUTER_PROVIDERS } from './app';
 
+import './styles/main.scss';
+
 class DefaultHttpRequest extends BaseRequestOptions {
   headers = new Headers({
     'Content-Type': 'application/json'

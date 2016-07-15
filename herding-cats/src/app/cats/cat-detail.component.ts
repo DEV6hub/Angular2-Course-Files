@@ -9,6 +9,7 @@ import { CatService } from './cat.service';
 @Component({
   selector: 'cat-detail',
   templateUrl: './cat-detail.component.html',
+  styleUrls: ['./cat-detail.component.scss'],
   pipes: [CatYearsPipe],
   directives: [ROUTER_DIRECTIVES]
 })

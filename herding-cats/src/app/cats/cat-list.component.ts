@@ -7,7 +7,8 @@ import { CatService } from './cat.service';
 
 @Component({
   selector: 'cat-list',
-  templateUrl: './cat-list.component.html'
+  templateUrl: './cat-list.component.html',
+  styleUrls: ['./cat-list.component.scss']
 })
 export class CatListComponent implements OnInit {
   favouriteCat: Cat;
