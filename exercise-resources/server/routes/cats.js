@@ -66,7 +66,7 @@ router.delete('/:id', function removeCat(req, res) {
   const catId = +req.params.id;
   const catIndex = cats.findIndex(cat => cat.id === catId);
 
-  if (catIndex) {
+  if (catIndex !== undefined) {
     cats.splice(catIndex, 1);
     res.json({ message: 'Cat successfully removed.' });
   } else {

@@ -60,7 +60,7 @@ router.delete('/:id', function remove(req, res) {
   const id = +req.params.id;
   const index = dogs.findIndex(dog => dog.id === id);
 
-  if (index) {
+  if (index !== undefined) {
     dogs.splice(index, 1);
     res.json({ message: 'Dog successfully removed.' });
   } else {
