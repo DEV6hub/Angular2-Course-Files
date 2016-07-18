@@ -6,7 +6,7 @@ import { LifecycleReporterComponent } from './lifecycle-reporter.component';
 
 @Component({
   selector: 'dev6-app',
-  template: require('./app.component.html'),
+  templateUrl: './app.component.html',
   providers: [PeopleService],
   directives: [PeopleListComponent, LifecycleReporterComponent]
 })

@@ -7,7 +7,7 @@ import { NoStyleComponent } from './no-style.component';
 
 @Component({
   selector: 'dev6-app',
-  template: require('./app.component.html'),
+  templateUrl: './app.component.html',
   directives: [
     RedComponent,
     GreenComponent,

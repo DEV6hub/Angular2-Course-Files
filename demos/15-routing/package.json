@@ -26,6 +26,7 @@
     "api-server": "node server/server.js"
   },
   "devDependencies": {
+    "angular2-template-loader": "^0.4.0",
     "autoprefixer": "^6.3.7",
     "awesome-typescript-loader": "^1.1.1",
     "clean-webpack-plugin": "^0.1.9",

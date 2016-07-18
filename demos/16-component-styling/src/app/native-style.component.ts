@@ -4,6 +4,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'native-style',
   template: `<h3>Native Style Component</h3>`,
   encapsulation: ViewEncapsulation.Native,
-  styles: [require('./native-style.component.scss')]
+  styleUrls: ['./native-style.component.scss']
 })
 export class NativeStyleComponent {}

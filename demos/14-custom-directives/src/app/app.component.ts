@@ -5,7 +5,7 @@ import { UnlessDirective } from './unless.directive';
 
 @Component({
   selector: 'dev6-app',
-  template: require('./app.component.html'),
+  templateUrl: './app.component.html',
   directives: [HoverHighlightDirective, UnlessDirective]
 })
 export class AppComponent {

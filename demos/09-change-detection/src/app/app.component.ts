@@ -6,7 +6,7 @@ import { PersonDetailsImmutableComponent } from './person-details-immutable.comp
 
 @Component({
   selector: 'dev6-app',
-  template: require('./app.component.html'),
+  templateUrl: './app.component.html',
   directives: [PersonDetailsComponent, PersonDetailsImmutableComponent]
 })
 export class AppComponent {

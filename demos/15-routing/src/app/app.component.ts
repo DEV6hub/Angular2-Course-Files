@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'dev6-app',
-  template: require('./app.component.html'),
+  templateUrl: './app.component.html',
   directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent {

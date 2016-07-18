@@ -4,7 +4,7 @@ import { Person } from './person.model';
 
 @Component({
   selector: 'person-details',
-  template: require('./person-details.component.html')
+  templateUrl: './person-details.component.html'
 })
 export class PersonDetailsComponent {
   @Input() person: Person;

@@ -113,7 +113,7 @@ const config = {
       // Reference: https://github.com/s-panferov/awesome-typescript-loader
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
         exclude: [isTest ? /\.e2e\.ts$/ : /\.(spec|e2e)\.ts$/]
       },
 

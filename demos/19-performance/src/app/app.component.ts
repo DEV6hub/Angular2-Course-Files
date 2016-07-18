@@ -4,7 +4,7 @@ import { ProgressBarComponent } from './progress-bar.component';
 
 @Component({
   selector: 'dev6-app',
-  template: require('./app.component.html'),
+  templateUrl: './app.component.html',
   directives: [ProgressBarComponent]
 })
 export class AppComponent {
