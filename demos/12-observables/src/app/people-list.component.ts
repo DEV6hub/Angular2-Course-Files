@@ -10,7 +10,7 @@ import { PeopleService } from './people.service';
 })
 export class PeopleListComponent implements OnInit, OnDestroy {
   people: Person[];
-  subscription: Subscription;
+  private subscription: Subscription;
 
   constructor(private peopleService: PeopleService) { }
 
