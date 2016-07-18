@@ -1,5 +1,5 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { provide } from '@angular/core';
+import { provide, enableProdMode } from '@angular/core';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { HTTP_PROVIDERS, BaseRequestOptions, RequestOptions, Headers } from '@angular/http';
 
@@ -11,6 +11,10 @@ class DefaultHttpRequest extends BaseRequestOptions {
   headers = new Headers({
     'Content-Type': 'application/json'
   });
+}
+
+if (ENV === 'production') {
+  enableProdMode();
 }
 
 bootstrap(AppComponent, [
