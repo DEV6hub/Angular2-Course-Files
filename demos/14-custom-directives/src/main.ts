@@ -1,5 +1,11 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import {NgModule} from "@angular/core";
+import {AppComponent} from "./app/app.component";
+import {HoverHighlightDirective} from "./app/hover-highlight.directive";
+import {UnlessDirective} from "./app/unless.directive";
 
-import { AppComponent } from './app/';
+@NgModule({
+	declarations: [AppComponent, HoverHighlightDirective, UnlessDirective],
+	bootstrap: [AppComponent]
+})
 
-bootstrap(AppComponent);
+export class AppModule {}

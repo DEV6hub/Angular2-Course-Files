@@ -1,5 +1,11 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import {NgModule} from "@angular/core";
+import {AppComponent} from "./app/app.component";
+import {PersonDetailsComponent} from "./app/person-details.component";
+import {PersonDetailsImmutableComponent} from "./app/person-details-immutable.component";
 
-import { AppComponent } from './app/';
+@NgModule({
+	declarations: [AppComponent, PersonDetailsComponent, PersonDetailsImmutableComponent],
+	bootstrap: [AppComponent]
+})
 
-bootstrap(AppComponent);
+export class AppModule {}

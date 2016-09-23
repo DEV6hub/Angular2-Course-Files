@@ -1,10 +1,9 @@
-import { RouterConfig } from '@angular/router';
-
 import { PeopleComponent } from './people.component';
 import { PeopleListComponent } from './people-list.component';
 import { PersonDetailsComponent } from './person-details.component';
+import {Routes} from "@angular/router";
 
-export const peopleRoutes: RouterConfig = [
+export const peopleRoutes: Routes = [
   {
     path: 'people',
     component: PeopleComponent,

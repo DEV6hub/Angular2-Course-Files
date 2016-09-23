@@ -1,14 +1,12 @@
-import { provideRouter, RouterConfig } from '@angular/router';
-
 import { DashboardComponent } from './dashboard.component';
 import { peopleRoutes } from './people';
+import {Routes, RouterModule} from "@angular/router";
+import {ModuleWithProviders} from "@angular/core";
 
-const routes: RouterConfig = [
+const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   ...peopleRoutes,
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
-];
+export const appRouting: ModuleWithProviders = RouterModule.forRoot(routes);

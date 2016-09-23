@@ -1,14 +1,8 @@
-import { Component } from '@angular/core';
-
-import { PeopleService } from './people.service';
-import { PeopleListComponent } from './people-list.component';
-import { LifecycleReporterComponent } from './lifecycle-reporter.component';
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app.component.html',
-  providers: [PeopleService],
-  directives: [PeopleListComponent, LifecycleReporterComponent]
+  templateUrl: './app-component.html'
 })
 export class AppComponent {
   title = 'Lifecycle Hooks';

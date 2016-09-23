@@ -2,7 +2,7 @@ import { Component, trigger, state, style, transition, animate } from '@angular/
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app.component.html',
+  templateUrl: './app-component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
     trigger('fade', [

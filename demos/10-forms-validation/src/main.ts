@@ -1,11 +1,11 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
+import {NgModule} from "@angular/core";
+import {AppComponent} from "./app/app.component";
+import {PersonDetailsComponent} from "./app/person-details.component";
+import {PersonFormComponent} from "./app/person-form.component";
 
-import { AppComponent } from './app/';
+@NgModule({
+  declarations: [AppComponent, PersonDetailsComponent, PersonFormComponent],
+  bootstrap: [AppComponent]
+})
 
-import './styles/main.scss';
-
-bootstrap(AppComponent, [
-  disableDeprecatedForms(),
-  provideForms()
-]);
+export class AppModule {}

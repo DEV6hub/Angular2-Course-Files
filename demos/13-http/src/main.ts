@@ -1,16 +1,12 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { provide } from '@angular/core';
-import { HTTP_PROVIDERS, BaseRequestOptions, RequestOptions, Headers } from '@angular/http';
+import {NgModule} from "@angular/core";
+import {AppComponent} from "./app/app.component";
+import {PeopleService} from "./app/people.service";
+import {PeopleListComponent} from "./app/people-list.component";
 
-import { AppComponent } from './app/';
+@NgModule({
+  declarations: [AppComponent, PeopleListComponent],
+  providers: [PeopleService],
+  bootstrap: [AppComponent]
+})
 
-class DefaultHttpRequest extends BaseRequestOptions {
-  headers = new Headers({
-    'Content-Type': 'application/json'
-  });
-}
-
-bootstrap(AppComponent, [
-  HTTP_PROVIDERS,
-  provide(RequestOptions, { useClass: DefaultHttpRequest })
-]);
+export class AppModule {}
