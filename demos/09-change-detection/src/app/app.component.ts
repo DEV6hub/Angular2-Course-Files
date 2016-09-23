@@ -1,9 +1,9 @@
 import {Component} from "@angular/core";
-import {Person} from "./person.model";
+import {Person} from "./person";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app-component.html'
+  template: require('./app.component.html')
 })
 export class AppComponent {
   title = 'Change Detection';

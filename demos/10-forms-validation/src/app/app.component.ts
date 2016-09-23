@@ -3,7 +3,7 @@ import {Person} from "./person.model";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app-component.html'
+  template: require('./app.component.html')
 })
 export class AppComponent {
   title = 'Forms & Validation';

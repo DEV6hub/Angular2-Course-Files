@@ -3,7 +3,7 @@ import {PeopleService} from "./people.service";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app-component.html',
+  template: require('./app.component.html')
 })
 export class AppComponent {
   title = 'Dependency Injection';

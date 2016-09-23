@@ -1,11 +1,5 @@
-import {NgModule} from "@angular/core";
-import {AppComponent} from "./app/app.component";
-import {PersonDetailsComponent} from "./app/person-details.component";
-import {PersonFormComponent} from "./app/person-form.component";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {AppModule} from "./app.module";
 
-@NgModule({
-  declarations: [AppComponent, PersonDetailsComponent, PersonFormComponent],
-  bootstrap: [AppComponent]
-})
-
-export class AppModule {}
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);
