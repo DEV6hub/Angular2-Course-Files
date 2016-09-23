@@ -1,7 +1,8 @@
 import { PeopleComponent } from './people.component';
 import { PeopleListComponent } from './people-list.component';
 import { PersonDetailsComponent } from './person-details.component';
-import {Routes} from "@angular/router";
+import {Routes, RouterModule} from "@angular/router";
+import {ModuleWithProviders} from "@angular/core";
 
 export const peopleRoutes: Routes = [
   {
@@ -13,3 +14,5 @@ export const peopleRoutes: Routes = [
     ]
   }
 ];
+
+export const peopleRouting: ModuleWithProviders = RouterModule.forChild(peopleRoutes);

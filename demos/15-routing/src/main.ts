@@ -1,12 +1,5 @@
-import {NgModule} from "@angular/core";
-import {AppComponent} from "./app/app.component";
-import {DashboardComponent} from "./app/dashboard.component";
-import {RouterModule} from "@angular/router";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {AppModule} from "./app.module";
 
-@NgModule({
-  imports: [RouterModule],
-  declarations: [AppComponent, DashboardComponent],
-  bootstrap: [AppComponent]
-})
-
-export class AppModule {}
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);
