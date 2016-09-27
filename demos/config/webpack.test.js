@@ -1,13 +1,8 @@
 const webpack = require("webpack"),
 	helpers = require("./helpers");
 
-const lessonVars = require("./lessons.json");
-
-const LESSON = process.env.LESSON;
-const lessonPath = LESSON ? lessonVars[LESSON] : "";
-
 module.exports = {
-	context: helpers.root() + "/" + lessonPath + "/src",
+	context: helpers.root(),
 	devtool: "inline-source-map",
 	
 	resolve: {
@@ -28,7 +23,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				include: helpers.root(lessonPath, "src", "app"),
+				include: helpers.root("src", "app"),
 				loader: "raw"
 			}
 		]
