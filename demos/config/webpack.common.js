@@ -52,7 +52,7 @@ module.exports = {
 				loader: "raw"
 			},
 			{
-				test: /global\.s(a|c)ss$/,
+				test: /\.s(a|c)ss$/,
 				loaders: ["style-loader", "css-loader", "sass-loader"]
 			}
 		]

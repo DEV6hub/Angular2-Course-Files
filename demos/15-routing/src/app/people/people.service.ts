@@ -7,7 +7,7 @@ import { Person } from './person';
 @Injectable()
 export class PeopleService {
   favourite: Person;
-  private urlBase = 'http://localhost:8080';
+  private urlBase = 'http://localhost:9000';
 
   constructor(private http: Http) {}
 

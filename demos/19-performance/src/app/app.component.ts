@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
-
-import { ProgressBarComponent } from './progress-bar.component';
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app.component.html'
+  template: require('./app.component.html')
 })
 export class AppComponent {
   title = 'Performance with Zones';

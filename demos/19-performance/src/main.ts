@@ -1,10 +1,5 @@
-import {NgModule} from "@angular/core";
-import {AppComponent} from "./app/app.component";
-import {ProgressBarComponent} from "./app/progress-bar.component";
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {AppModule} from "./app.module";
 
-@NgModule({
-	declarations: [AppComponent, ProgressBarComponent],
-	bootstrap: [AppComponent]
-})
-
-export class AppModule {}
+const platform = platformBrowserDynamic();
+platform.bootstrapModule(AppModule);
