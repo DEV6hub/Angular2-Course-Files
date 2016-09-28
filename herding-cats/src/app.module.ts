@@ -6,9 +6,10 @@ import {FormsModule} from "@angular/forms";
 import {CatYearsPipe} from "./app/cat-years.pipe";
 import {CatService} from "./app/cat.service";
 import {CatFormComponent} from "./app/cat-form.component";
+import {Headers, BaseRequestOptions, RequestOptions, HttpModule} from "@angular/http";
 
 @NgModule({
-	imports: [BrowserModule, FormsModule],
+	imports: [BrowserModule, FormsModule, HttpModule],
 	declarations: [AppComponent, CatDetailComponent, CatFormComponent, CatYearsPipe],
 	providers: [CatService],
 	bootstrap: [AppComponent]

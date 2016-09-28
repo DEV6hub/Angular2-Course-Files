@@ -7,7 +7,7 @@ import { Cat } from './cat';
 @Injectable()
 export class CatService {
   favouriteCat: Cat;
-  private apiBase = 'http://localhost:8080';
+  private apiBase = 'http://localhost:9000';
 
   constructor(private http: Http) { }
 
