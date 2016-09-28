@@ -9,21 +9,25 @@ let sparkles = new Cat('Sparkles');
 sparkles.id = 1;
 sparkles.type = 'Persian';
 sparkles.description = 'White and very fluffy';
+sparkles.birthday = new Date(2006, 4, 20);
 
 let bandit = new Cat('Bandit');
 bandit.id = 2;
 bandit.type = 'Calico';
 bandit.description = 'Has a large dark patch of fur around left eye';
+bandit.birthday = new Date(2013, 8, 7);
 
 let pebbles = new Cat('Pebbles');
 pebbles.id = 3;
 pebbles.type = 'Bengal';
 pebbles.description = 'Seems to think it is actually a tiger';
+pebbles.birthday = new Date(2016, 0, 25);
 
 let fluffy = new Cat('Fluffy');
 fluffy.id = 4;
 fluffy.type = 'Ragdoll';
 fluffy.description = 'Grumpy';
+fluffy.birthday = new Date(2015, 2, 23);
 
 let cats = [sparkles, bandit, pebbles, fluffy];
 let idCounter = 5;
@@ -62,7 +66,7 @@ router.delete('/:id', function removeCat(req, res) {
   const catId = +req.params.id;
   const catIndex = cats.findIndex(cat => cat.id === catId);
 
-  if (catIndex) {
+  if (catIndex !== undefined) {
     cats.splice(catIndex, 1);
     res.json({ message: 'Cat successfully removed.' });
   } else {

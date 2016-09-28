@@ -1,11 +1,8 @@
-import { Component } from '@angular/core';
-
-import { PigLatinPipe } from './pig-latin.pipe';
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app.component.html',
-  pipes: [PigLatinPipe]
+  template: require('./app.component.html')
 })
 export class AppComponent {
   title = 'Pipes';

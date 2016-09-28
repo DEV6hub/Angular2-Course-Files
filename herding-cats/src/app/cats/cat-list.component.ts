@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 import { CatService } from './cat.service';
 
 @Component({
   selector: 'cat-list',
-  templateUrl: './cat-list.component.html',
-  styleUrls: ['./cat-list.component.scss']
+  template: require('./cat-list.component.html')
 })
 export class CatListComponent implements OnInit {
   favouriteCat: Cat;
