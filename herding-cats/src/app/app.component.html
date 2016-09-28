@@ -3,7 +3,7 @@
 <h3>Favourite Cat: {{favouriteCat?.name}}</h3>
 
 <ul>
-  <li *ngFor="let cat of catService.getCatList()" (click)="selectCat(cat)">{{cat.name}}</li>
+  <li *ngFor="let cat of cats" (click)="selectCat(cat)">{{cat.name}}</li>
 </ul>
 
 <cat-detail [cat]="selectedCat" (isFavourite)="selectFavourite($event)" *ngIf="selectedCat"></cat-detail>
