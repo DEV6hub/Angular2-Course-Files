@@ -1,16 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { Cat } from './cat.model';
-import { CatService } from './cat.service';
+import { Cat } from './cat';
 import { CatDetailComponent } from './cat-detail.component';
-import { CatFormComponent } from './cat-form.component';
+import {CatService} from "./cat.service";
 
 @Component({
   selector: 'herding-cats',
-  templateUrl: './app.component.html',
-  directives: [CatDetailComponent, CatFormComponent],
-  providers: [CatService]
+  template: require('./app.component.html')
 })
 export class AppComponent implements OnInit, OnDestroy {
   cats: Cat[];

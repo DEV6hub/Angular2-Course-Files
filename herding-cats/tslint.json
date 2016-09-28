@@ -105,13 +105,6 @@
       }
     ],
     "triple-equals": true,
-    // "typedef": [
-    //   true,
-    //   "call-signature",
-    //   "parameter",
-    //   "property-declaration",
-    //   "member-variable-declaration"
-    // ],
     "typedef-whitespace": [
       true, {
         "call-signature": "nospace",
@@ -163,14 +156,6 @@
       true,
       "element"
     ],
-    // "directive-selector-prefix": [
-    //   true,
-    //   "dev6"
-    // ],
-    // "component-selector-prefix": [
-    //   true,
-    //   "dev6"
-    // ],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
@@ -183,7 +168,6 @@
     "pipe-naming": [
       true,
       "camelCase"
-      // "dev6"
     ],
     "component-class-suffix": true,
     "directive-class-suffix": true,
