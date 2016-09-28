@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 
 const matilda = new Cat('Matilda', 'Calico', 'Loves window sitting and snuggles', new Date(2016, 0, 25));
 matilda.id = 1;

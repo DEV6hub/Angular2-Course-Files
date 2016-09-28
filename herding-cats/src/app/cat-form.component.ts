@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 import { CatService } from './cat.service';
 
 @Component({
   selector: 'cat-form',
-  templateUrl: './cat-form.component.html'
+  template: require('./cat-form.component.html')
 })
 export class CatFormComponent implements OnInit {
   @Input() catId: number;
