@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Person } from './person.model';
+import { Person } from './person';
 
 @Injectable()
 export class PeopleService {
   favourite: Person;
-  private urlBase = 'http://localhost:8080';
+  private urlBase = 'http://localhost:9000';
 
   constructor(private http: Http) {}
 

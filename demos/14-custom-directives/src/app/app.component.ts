@@ -1,12 +1,8 @@
-import { Component } from '@angular/core';
-
-import { HoverHighlightDirective } from './hover-highlight.directive';
-import { UnlessDirective } from './unless.directive';
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app.component.html',
-  directives: [HoverHighlightDirective, UnlessDirective]
+  template: require('./app.component.html')
 })
 export class AppComponent {
   title = 'Custom Directives';

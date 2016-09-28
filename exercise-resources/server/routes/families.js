@@ -51,7 +51,7 @@ router.delete('/:id', function removeFamily(req, res) {
   const familyId = +req.params.id;
   const familyIndex = families.findIndex(family => family.id === familyId);
 
-  if (familyIndex) {
+  if (familyIndex !== undefined) {
     families.splice(familyIndex, 1);
     res.json({ message: 'Family successfully removed.' });
   } else {

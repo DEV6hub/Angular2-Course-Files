@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
-
-import { Person } from './person.model';
-import { PeopleService } from './people.service';
+import {Component, OnInit, OnDestroy} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
+import {Subscription} from "rxjs/Subscription";
+import {Person} from "./person";
+import {PeopleService} from "./people.service";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'person-details',
@@ -15,7 +15,8 @@ export class PersonDetailsComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private peopleService: PeopleService
+    private peopleService: PeopleService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +34,6 @@ export class PersonDetailsComponent implements OnInit, OnDestroy {
   }
 
   goBack() {
-    window.history.back();
+    this.location.back()
   }
 }
