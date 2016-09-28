@@ -7,7 +7,8 @@ import { CatService } from './cat.service';
 
 @Component({
   selector: 'cat-list',
-  template: require('./cat-list.component.html')
+  template: require('./cat-list.component.html'),
+  styles: [require('./cat-list.component.css')]
 })
 export class CatListComponent implements OnInit {
   favouriteCat: Cat;

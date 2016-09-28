@@ -8,7 +8,7 @@ import { CatService } from './cat.service';
 @Component({
   selector: 'cat-form',
   template: require('./cat-form.component.html'),
-  styleUrls: ['./cat-form.component.scss']
+  styles: [require('./cat-form.component.css')]
 })
 export class CatFormComponent implements OnInit, OnDestroy {
   cat: Cat;

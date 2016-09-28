@@ -6,7 +6,7 @@ import {CatService} from "./cat.service";
 
 @Component({
   selector: 'cat-detail',
-  styleUrls: ['./cat-detail.component.scss'],
+  styles: [require('./cat-detail.component.css')],
   template: require('./cat-detail.component.html')
 })
 export class CatDetailComponent implements OnInit, OnDestroy {
