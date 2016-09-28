@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 
 @Injectable()
 export class CatService {
