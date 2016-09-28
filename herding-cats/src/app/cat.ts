@@ -8,7 +8,7 @@ export class Cat {
   constructor(name?: string, type?: string, description?: string, birthday?: Date) {
     this.name = name;
     this.type = type;
-    this.description = type;
+    this.description = description;
     this.birthday = birthday;
   }
 }
