@@ -6,7 +6,7 @@
     "core-js": "registry:dt/core-js#0.0.0+20160914114559",
     "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
     "jasmine-expect": "registry:dt/jasmine-expect#2.0.0-beta2+20160317120654",
-    "node": "registry:dt/node#6.0.0+20160925070332",
-    "moment-node": "registry:dt/moment-node#2.11.1+20160511043338"
+    "moment": "registry:dt/moment#2.11.1+20160829143156",
+    "node": "registry:dt/node#6.0.0+20160928124643"
   }
 }
