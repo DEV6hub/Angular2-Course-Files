@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
-import { Person } from './person.model';
+import { Person } from './person';
 
 @Component({
   selector: 'person-details-immutable',

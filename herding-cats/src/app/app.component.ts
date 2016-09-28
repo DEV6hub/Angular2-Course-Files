@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Cat } from './cat.model';
-import { CatService } from './cat.service';
+import { Cat } from './cat';
 import { CatDetailComponent } from './cat-detail.component';
-import { CatFormComponent } from './cat-form.component';
+import {CatService} from "./cat.service";
 
 @Component({
   selector: 'herding-cats',
-  templateUrl: './app.component.html',
-  directives: [CatDetailComponent, CatFormComponent],
-  providers: [CatService]
+  template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
   cats: Observable<Cat[]>;

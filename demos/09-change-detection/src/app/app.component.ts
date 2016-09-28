@@ -1,13 +1,9 @@
-import { Component } from '@angular/core';
-
-import { Person } from './person.model';
-import { PersonDetailsComponent } from './person-details.component';
-import { PersonDetailsImmutableComponent } from './person-details-immutable.component';
+import {Component} from "@angular/core";
+import {Person} from "./person";
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app.component.html',
-  directives: [PersonDetailsComponent, PersonDetailsImmutableComponent]
+  template: require('./app.component.html')
 })
 export class AppComponent {
   title = 'Change Detection';

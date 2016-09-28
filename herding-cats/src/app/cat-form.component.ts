@@ -2,12 +2,12 @@ import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angu
 import * as moment from 'moment';
 import { Subscription } from 'rxjs/Subscription';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 import { CatService } from './cat.service';
 
 @Component({
   selector: 'cat-form',
-  templateUrl: './cat-form.component.html'
+  template: require('./cat-form.component.html')
 })
 export class CatFormComponent implements OnInit, OnDestroy {
   @Input() catId: number;

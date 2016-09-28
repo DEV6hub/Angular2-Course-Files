@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { Person } from './person.model';
+import { Person } from './person';
 import { PeopleService } from './people.service';
 
 @Component({
