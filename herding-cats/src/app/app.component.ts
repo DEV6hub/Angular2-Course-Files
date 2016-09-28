@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   selector: 'herding-cats',
-  templateUrl: './app.component.html',
-  directives: [ROUTER_DIRECTIVES]
+  template: require('./app.component.html')
 })
 export class AppComponent { }

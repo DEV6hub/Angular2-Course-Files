@@ -1,18 +1,15 @@
-import { Component, ViewChild } from '@angular/core';
-
-import { InsideOutsideComponent } from './inside-outside.component';
-import { Person } from './person.model';
-import { PersonDetailsComponent } from './person-details.component';
+import {Component, ViewChild} from "@angular/core";
+import {Person} from "./person";
+import {PersonDetailsComponent} from "./person-details.component";
 
 @Component({
-  selector: 'dev6-app',
-  templateUrl: './app.component.html',
-  directives: [InsideOutsideComponent, PersonDetailsComponent]
+  selector: "dev6-app",
+  template: require("./app.component.html")
 })
 export class AppComponent {
-  title = 'Components';
-  john = new Person('John', 'Smith');
-  jane = new Person('Jane', 'Doe');
+  title = "Components";
+  john = new Person("John", "Smith");
+  jane = new Person("Jane", "Doe");
   highFiveCount = 0;
   recentHighFive: string;
 

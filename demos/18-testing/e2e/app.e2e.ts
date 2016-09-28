@@ -1,3 +1,4 @@
+import {browser, by, element} from "protractor";
 describe('Testing Demo', () => {
 
   beforeEach(() => {
