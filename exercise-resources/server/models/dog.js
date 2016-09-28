@@ -3,6 +3,7 @@ module.exports = class Dog {
   // name
   // type
   // description
+  // birthday
   constructor(name) {
     this.name = name;
   }

@@ -1,12 +1,8 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import {Routes, RouterModule} from "@angular/router";
+import {ModuleWithProviders} from "@angular/core";
 
-import { catsRoutes } from './cats';
-
-const routes: RouterConfig = [
-  ...catsRoutes,
+const routes: Routes = [
   { path: '', redirectTo: 'cats', pathMatch: 'full' }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
-];
+export const appRouting: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -2,14 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { Subscription } from 'rxjs/Subscription';
-
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 import { CatService } from './cat.service';
 
 @Component({
   selector: 'cat-form',
-  templateUrl: './cat-form.component.html'
-  styleUrls: ['./cat-form.component.scss']
+  template: require('./cat-form.component.html'),
+  styles: [require('./cat-form.component.css')]
 })
 export class CatFormComponent implements OnInit, OnDestroy {
   cat: Cat;

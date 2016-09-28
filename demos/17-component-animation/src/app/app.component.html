@@ -2,5 +2,5 @@
 
 <button (click)="toggleMessage()">Toggle Messages</button>
 
-<p *ngIf="showMessage" @fade="'in'">Hello!</p>
-<p *ngIf="showMessage" @slideInOut="'in'">How are you?</p>
+<p *ngIf="showMessage" [@fade]="'in'">Hello!</p>
+<p *ngIf="showMessage" [@slideInOut]="'in'">How are you?</p>
