@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Cat } from './cat';
-import { CatDetailComponent } from './cat-detail.component';
+import {Component, OnInit} from "@angular/core";
+import {Cat} from "./cat";
 import {CatService} from "./cat.service";
 
 @Component({
