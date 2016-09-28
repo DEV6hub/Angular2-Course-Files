@@ -2,8 +2,8 @@ import { Component, trigger, state, style, transition, animate } from '@angular/
 
 @Component({
   selector: 'dev6-app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: require('./app.component.html'),
+  styles: [require('./app.component.css')],
   animations: [
     trigger('fade', [
       state('in', style({ opacity: 1 })),

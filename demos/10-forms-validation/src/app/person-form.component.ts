@@ -5,7 +5,7 @@ import { Person } from './person.model';
 
 @Component({
   selector: 'person-form',
-  templateUrl: './person-form.component.html'
+  template: require('./person-form.component.html')
 })
 export class PersonFormComponent {
   @Output() submitted = new EventEmitter<Person>();
