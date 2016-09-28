@@ -5,10 +5,11 @@ import {CatDetailComponent} from "./app/cat-detail.component";
 import {FormsModule} from "@angular/forms";
 import {CatYearsPipe} from "./app/cat-years.pipe";
 import {CatService} from "./app/cat.service";
+import {CatFormComponent} from "./app/cat-form.component";
 
 @NgModule({
 	imports: [BrowserModule, FormsModule],
-	declarations: [AppComponent, CatDetailComponent, CatYearsPipe],
+	declarations: [AppComponent, CatDetailComponent, CatFormComponent, CatYearsPipe],
 	providers: [CatService],
 	bootstrap: [AppComponent]
 })
