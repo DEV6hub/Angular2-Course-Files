@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 import { CatDetailComponent } from './cat-detail.component';
-import { CatService } from './cat.service';
+import {CatService} from "./cat.service";
 
 @Component({
   selector: 'herding-cats',
-  templateUrl: './app.component.html',
-  directives: [CatDetailComponent],
-  providers: [CatService]
+  template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
   cats: Cat[];
