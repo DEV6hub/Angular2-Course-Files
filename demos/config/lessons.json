@@ -1,0 +1,20 @@
+{
+  "2": "02-getting-started",
+  "3": "03-components",
+  "4": "04-templates",
+  "5": "05-pipes",
+  "6": "06-services",
+  "7": "07-dependency-injection",
+  "8": "08-lifecycle-hooks",
+  "9": "09-change-detection",
+  "10": "10-forms-validation",
+  "11": "11-promises",
+  "12": "12-observables",
+  "13": "13-http",
+  "14": "14-custom-directives",
+  "15": "15-routing",
+  "16": "16-component-styling",
+  "17": "17-component-animation",
+  "18": "18-testing",
+  "19": "19-performance"
+}

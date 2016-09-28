@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 import { CatDetailComponent } from './cat-detail.component';
 
 @Component({
   selector: 'herding-cats',
-  templateUrl: './app.component.html',
-  directives: [CatDetailComponent]
+  template: require('./app.component.html')
 })
 export class AppComponent {
   cats = [

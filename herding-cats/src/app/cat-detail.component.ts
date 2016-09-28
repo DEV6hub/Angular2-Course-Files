@@ -1,10 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Cat } from './cat.model';
+import { Cat } from './cat';
 
 @Component({
   selector: 'cat-detail',
-  templateUrl: './cat-detail.component.html'
+  template: require('./cat-detail.component.html')
 })
 export class CatDetailComponent {
   @Input() cat: Cat;
