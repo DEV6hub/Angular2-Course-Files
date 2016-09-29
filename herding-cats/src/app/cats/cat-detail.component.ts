@@ -22,7 +22,7 @@ export class CatDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.paramsSubscription = this.route.params
-      .map(params => +params['id'])
+      .map(params => params['id'])
       .subscribe(id => {
         this.catSubscription = this.catService.getCat(id)
           .subscribe(

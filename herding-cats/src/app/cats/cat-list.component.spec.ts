@@ -1,68 +1,66 @@
-import {
-  addProviders,
-  inject,
-  async,
-  TestComponentBuilder
-} from '@angular/core/testing';
-import { provide } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import {inject, async, ComponentFixture, TestBed} from "@angular/core/testing";
+import {Observable} from "rxjs/Observable";
+import {CatListComponent} from "./cat-list.component";
+import {CatService} from "./cat.service";
+import {Cat} from "./cat";
+import {RouterModule, Router} from "@angular/router";
+import {CatYearsPipe} from "./cat-years.pipe";
+import {RouterStub} from "../../router-stub";
 
-import { CatListComponent } from './cat-list.component';
-import { CatService } from './cat.service';
-import { Cat } from './cat.model';
 
-/*
- * As of @angular/router 3.0.0-beta.2 the following tests will not
- * run due to the component's dependency on the router. The router
- * does not currently contain an API for unit testing. This API should
- * be included in the next release. These tests should be refactored
- * at that point in time. The code below is provided for example
- * purposes only.
- */
-
-xdescribe('CatListComponent', () => { // Test Suite Disabled
-  const mockCat = new Cat('Jimmy');
-  mockCat.id = 1;
-
-  const mockCats = [mockCat];
-
-  class MockCatService {
-    getCatList(): Observable<Cat[]> {
-      return Observable.of(mockCats);
-    }
-  }
-
-  let builder: TestComponentBuilder;
-  let catList: CatListComponent;
-  let catService: MockCatService;
-
-  beforeEach(() => addProviders([
-    provide(CatService, { useClass: MockCatService }),
-    CatListComponent,
-    TestComponentBuilder
-  ]));
-
-  beforeEach(inject([CatListComponent, CatService, TestComponentBuilder],
-    (component: CatListComponent, service: CatService, tcb: TestComponentBuilder) => {
-      catList = component;
-      catService = service;
-      builder = tcb;
-  }));
-
-  it('should exist', () => {
-    expect(catList).toBeTruthy();
-  });
-
-  it('should be initialized with an array of cats', () => {
-    catList.ngOnInit();
-    expect(catList.cats).toEqual(Observable.of(mockCats));
-  });
-
-  it('should render a list of cats', async(() => {
-    catList.ngOnInit();
-    builder.createAsync(CatListComponent).then(fixture => {
-      fixture.detectChanges();
-      expect(fixture.nativeElement.textContent.includes(mockCat.name)).toBeTrue();
-    });
-  }));
+describe("CatListComponent", () => {
+	const firstCat = new Cat("Jimmy");
+	firstCat.id = 1;
+	const secondCat = new Cat("Bobby");
+	secondCat.id = 2;
+	
+	const mockCats = [firstCat, secondCat];
+	
+	class MockCatService {
+		getCatList(): Observable<Cat[]> {
+			return Observable.of(mockCats);
+		}
+		
+		get favouriteCat (): Cat {
+			return firstCat;
+		}
+	}
+	
+	let fixture: ComponentFixture<CatListComponent>;
+	let catList: CatListComponent;
+	let catService: MockCatService;
+	
+	beforeEach(() => {
+		TestBed.configureTestingModule({
+			imports: [RouterModule],
+			declarations: [CatListComponent, CatYearsPipe],
+			providers: [
+				{ provide: CatService, useClass: MockCatService },
+				{ provide: Router, useClass: RouterStub }
+			]
+		});
+		fixture = TestBed.createComponent(CatListComponent);
+		catList = fixture.componentInstance;
+		catService = fixture.debugElement.injector.get(CatService);
+	});
+	
+	it("should be initialized with an array of cats", () => {
+		catList.ngOnInit();
+		expect(catList.cats).toEqual(Observable.of(mockCats));
+		expect(catList.favouriteCat).toEqual(catService.favouriteCat);
+	});
+	
+	it("should render a list of cats", async(() => {
+		catList.ngOnInit();
+		fixture.detectChanges();
+		expect(fixture.nativeElement.textContent.includes(firstCat.name)).toBeTrue();
+	}));
+	
+	it("should navigate to the selected cat detail page", () => {
+		catList.ngOnInit();
+		let router: RouterStub = fixture.debugElement.injector.get(Router);
+		let spy = spyOn(router, "navigate");
+		catList.selectCat(secondCat);
+		expect(spy).toHaveBeenCalledWith(["cats", secondCat.id]);
+	});
 });
