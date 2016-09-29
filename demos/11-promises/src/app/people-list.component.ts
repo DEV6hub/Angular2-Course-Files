@@ -5,7 +5,7 @@ import { PeopleService } from './people.service';
 
 @Component({
   selector: 'people-list',
-  templateUrl: './people-list.component.html'
+  template: require('./people-list.component.html')
 })
 export class PeopleListComponent implements OnInit {
   people: Person[];

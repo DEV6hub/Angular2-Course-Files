@@ -1,17 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router, ROUTER_DIRECTIVES } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
-
-import { Cat } from './cat.model';
-import { CatYearsPipe } from './cat-years.pipe';
-import { CatService } from './cat.service';
+import {Component, OnInit, OnDestroy} from "@angular/core";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs/Subscription";
+import {Cat} from "./cat";
+import {CatService} from "./cat.service";
 
 @Component({
   selector: 'cat-detail',
-  templateUrl: './cat-detail.component.html',
-  styleUrls: ['./cat-detail.component.scss'],
-  pipes: [CatYearsPipe],
-  directives: [ROUTER_DIRECTIVES]
+  styles: [require('./cat-detail.component.css')],
+  template: require('./cat-detail.component.html')
 })
 export class CatDetailComponent implements OnInit, OnDestroy {
   cat: Cat;
@@ -26,7 +22,7 @@ export class CatDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.paramsSubscription = this.route.params
-      .map(params => +params['id'])
+      .map(params => params['id'])
       .subscribe(id => {
         this.catSubscription = this.catService.getCat(id)
           .subscribe(

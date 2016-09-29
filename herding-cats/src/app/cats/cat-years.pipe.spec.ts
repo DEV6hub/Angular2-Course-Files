@@ -1,21 +1,11 @@
-import {
-  addProviders,
-  inject
-} from '@angular/core/testing';
-import { CatYearsPipe } from './cat-years.pipe';
+import {CatYearsPipe} from "./cat-years.pipe";
 
-describe('PeopleService', () => {
-  let pipeFn: (input: Date) => number;
+describe("CatYearsPipe", () => {
 
-  beforeEach(() => addProviders([CatYearsPipe]));
-
-  beforeEach(inject([CatYearsPipe], (pipe: CatYearsPipe) => pipeFn = pipe.transform));
-
-  it('should exist', () => {
-    expect(pipeFn).toBeTruthy();
-  });
-
-  it('should take a Date and return a number', () => {
-    expect(pipeFn(new Date())).toBeNumber();
+  it("should take a Date and return a number", () => {
+    let pipe = new CatYearsPipe();
+    let sample: Date = new Date();
+    sample.setFullYear(1999, 3, 20);
+    expect(pipe.transform(sample)).toEqual(122); // 17 years * 7 = 122
   });
 });

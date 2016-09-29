@@ -1,11 +1,12 @@
-import { RouterConfig } from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 
 import { CatsComponent } from './cats.component';
 import { CatListComponent } from './cat-list.component';
 import { CatDetailComponent } from './cat-detail.component';
 import { CatFormComponent } from './cat-form.component';
+import {ModuleWithProviders} from "@angular/core";
 
-export const catsRoutes: RouterConfig = [
+export const catRoutes: Routes = [
   {
     path: 'cats',
     component: CatsComponent,
@@ -17,3 +18,5 @@ export const catsRoutes: RouterConfig = [
     ]
   }
 ];
+
+export const catRouting: ModuleWithProviders = RouterModule.forChild(catRoutes);

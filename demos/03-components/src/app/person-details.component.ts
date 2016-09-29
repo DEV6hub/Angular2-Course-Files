@@ -1,10 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Person } from './person.model';
+import { Person } from './person';
 
 @Component({
   selector: 'person-details',
-  templateUrl: './person-details.component.html'
+  template: require('./person-details.component.html')
 })
 export class PersonDetailsComponent {
   @Input() person: Person;
