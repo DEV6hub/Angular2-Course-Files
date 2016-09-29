@@ -5,7 +5,7 @@ import {CatService} from "./cat.service";
 import {Cat} from "./cat";
 import {RouterModule, Router} from "@angular/router";
 import {CatYearsPipe} from "./cat-years.pipe";
-import {RouterStub} from "../../router-stub";
+import {RouterStub} from "../../stubs/router-stub";
 
 
 describe("CatListComponent", () => {

@@ -4,8 +4,8 @@ import {CatService} from "./cat.service";
 import {Cat} from "./cat";
 import {RouterModule, ActivatedRoute, Router} from "@angular/router";
 import {CatYearsPipe} from "./cat-years.pipe";
-import {ActivatedRouteStub} from "../../activated-route-stub";
-import {RouterStub} from "../../router-stub";
+import {ActivatedRouteStub} from "../../stubs/activated-route-stub";
+import {RouterStub} from "../../stubs/router-stub";
 import {BehaviorSubject, Observable} from "rxjs";
 
 describe("CatDetailComponent", () => {
