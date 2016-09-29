@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV='production' webpack --progress --display-error-details",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --display-error-details",
     "postinstall": "typings install",
     "server": "webpack-dev-server --inline --progress --display-error-details --port 8080",
     "start": "npm run server",
