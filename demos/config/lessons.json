@@ -1,7 +1,8 @@
 {
-  "2": "02-getting-started",
-  "3": "03-components",
-  "4": "04-templates",
+  "1": "01-getting-started",
+  "2": "02-components",
+  "3": "03-templates",
+  "4": "04-custom-directives",
   "5": "05-pipes",
   "6": "06-services",
   "7": "07-dependency-injection",
@@ -11,10 +12,9 @@
   "11": "11-promises",
   "12": "12-observables",
   "13": "13-http",
-  "14": "14-custom-directives",
-  "15": "15-routing",
-  "16": "16-component-styling",
-  "17": "17-component-animation",
-  "18": "18-testing",
-  "19": "19-performance"
+  "14": "14-routing",
+  "15": "15-component-styling",
+  "16": "16-component-animation",
+  "17": "17-testing",
+  "18": "18-performance"
 }
