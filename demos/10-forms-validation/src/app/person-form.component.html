@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitForm()" #personForm="ngForm" *ngIf="active" novalidate>
+<form (ngSubmit)="submitForm(personForm)" #personForm="ngForm" *ngIf="active" novalidate>
   <div class="form-group" [class.has-error]="isInvalid(firstNameInput, personForm)">
     <label for="firstName" class="control-label">First Name*</label>
     <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="firstName" #firstNameInput="ngModel" required>

@@ -15,28 +15,25 @@ export class PersonFormComponent {
   age: number;
   active = true;
 
-  submitForm() {
-    console.log('submitForm called');
+  submitForm( form: NgForm ) {
     let person = new Person(this.firstName, this.lastName);
     person.gender = this.gender;
     person.age = this.age;
 
     this.submitted.emit(person);
-    this.resetForm();
+    this.resetForm(form);
   }
 
   isInvalid(input: NgModel, form: NgForm): boolean {
     return !input.valid && (input.touched || form.submitted);
   }
 
-  private resetForm() {
+  private resetForm( form: NgForm ) {
     this.firstName = undefined;
     this.lastName = undefined;
     this.gender = undefined;
     this.age = undefined;
 
-    // Form state reset trick. Waiting for framework support
-    this.active = false;
-    setTimeout(() => this.active = true, 0);
+    form.reset();
   }
 }
